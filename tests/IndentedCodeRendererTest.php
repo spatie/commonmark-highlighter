@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace Spatie\CommonMarkHighlighter\Tests;
 
 use League\CommonMark\Block\Element\IndentedCode;
 use League\CommonMark\DocParser;
