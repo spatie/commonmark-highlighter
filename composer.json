@@ -1,6 +1,6 @@
 {
     "name": "spatie/commonmark-highlighter",
-    "description": "Highlight code blocks with league/commonmark",
+    "description": "Highlight your markdown code blocks with league/commonmark",
     "keywords": [
         "spatie",
         "commonmark-highlighter"

@@ -1,4 +1,4 @@
-# Highlight code blocks with league/commonmark
+# Highlight your markdown code blocks with league/commonmark
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/commonmark-highlighter.svg?style=flat-square)](https://packagist.org/packages/spatie/commonmark-highlighter)
 [![Build Status](https://img.shields.io/travis/spatie/commonmark-highlighter/master.svg?style=flat-square)](https://travis-ci.org/spatie/commonmark-highlighter)
