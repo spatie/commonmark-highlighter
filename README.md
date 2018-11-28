@@ -5,7 +5,18 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/commonmark-highlighter.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/commonmark-highlighter)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/commonmark-highlighter.svg?style=flat-square)](https://packagist.org/packages/spatie/commonmark-highlighter)
 
-A block renderer for  [league/commonmark](https://github.com/thephpleague/commonmark) to highlight code blocks using [scrivo/highlight.php](https://github.com/scrivo/highlight.php). Inspired by [sixlive/parsedown-highlight](https://github.com/sixlive/parsedown-highlight).
+A block renderer for  [league/commonmark](https://github.com/thephpleague/commonmark) to highlight code blocks using [scrivo/highlight.php](https://github.com/scrivo/highlight.php).
+
+> highlight.php is a server side code highlighter written in PHP that currently supports 185 languages. It's a port of highlight.js by Ivan Sagalaev that makes full use of the language and style definitions of the original JavaScript project.
+
+The output html is compatible with highlight.js themes, which you can expore on [highlightjs.org](https://highlightjs.org/static/demo/). 
+
+What are the benefits of using this package over highlight.js?
+
+- Less JavaScript, which means faster page loads
+- No more flash of unstyled code blocks
+
+ This project was inspired by [sixlive/parsedown-highlight](https://github.com/sixlive/parsedown-highlight).
 
 ## Installation
 
@@ -22,9 +33,8 @@ Create a custom CommonMark environment, and register the `FencedCodeRenderer` an
 ```php
 use League\CommonMark\Block\Element\FencedCode;
 use League\CommonMark\Block\Element\IndentedCode;
-use League\CommonMark\DocParser;
+use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment;
-use League\CommonMark\HtmlRenderer;
 use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 
@@ -32,13 +42,9 @@ $environment = Environment::createCommonMarkEnvironment();
 $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer());
 $environment->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer());
 
-$parser = new DocParser($environment);
+$commonMarkConverter = new CommonMarkConverter([], $environment);
 
-$htmlRenderer = new HtmlRenderer($environment);
-
-$document = $parser->parse(file_get_contents('my_markdown_file.md'));
-
-echo $htmlRenderer->renderBlock($document);
+echo $commonMarkConverter->convertToHtml($markdown);
 ```
 
 The underlying highlight library recommends specifying a subset of languages for the auto-detection. You can pass an array of languages to any of the renderers.
