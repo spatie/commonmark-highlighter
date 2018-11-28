@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<div>
+  <p>Which looks like this in use:</p>
+  <pre>
+    <code class="language-xml hljs xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">generic-form</span>
+    <span class="hljs-attr">:showBackButton</span>=<span class="hljs-string">"true"</span>
+    @<span class="hljs-attr">back</span>=<span class="hljs-string">"goBack"</span>
+&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">generic-form</span>&gt;</span>
+    </code>
+  </pre>
+  <p>Something feels wrong here.</p>
+</div>

@@ -40,7 +40,7 @@ MARKDOWN;
 
         $html = $htmlRenderer->renderBlock($document);
 
-        $this->assertMatchesSnapshot($html);
+        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
 
     /** @test */
@@ -69,6 +69,6 @@ MARKDOWN;
 
         $html = $htmlRenderer->renderBlock($document);
 
-        $this->assertMatchesSnapshot($html);
+        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
 }

@@ -38,6 +38,6 @@ MARKDOWN;
 
         $html = $htmlRenderer->renderBlock($document);
 
-        $this->assertMatchesSnapshot($html);
+        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
 }

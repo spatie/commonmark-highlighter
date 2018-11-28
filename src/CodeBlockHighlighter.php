@@ -30,7 +30,7 @@ class CodeBlockHighlighter
             return vsprintf('<code class="%s hljs %s">%s</code>', [
                 'language-' . ($language ? $language : $result->language),
                 $result->language,
-                htmlspecialchars($result->value),
+                $result->value,
             ]);
         } catch (DomainException $e) {
             return $codeBlock;

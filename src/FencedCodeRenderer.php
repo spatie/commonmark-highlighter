@@ -13,7 +13,7 @@ class FencedCodeRenderer extends BaseFencedCodeRenderer
     /** @var \Spatie\CommonMarkHighlighter\CodeBlockHighlighter */
     protected $highlighter;
 
-    public function __construct(array $autodetectLanguages)
+    public function __construct(array $autodetectLanguages = [])
     {
         $this->highlighter = new CodeBlockHighlighter($autodetectLanguages);
     }
