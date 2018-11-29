@@ -2,13 +2,13 @@
 
 namespace Spatie\CommonMarkHighlighter\Tests;
 
-use League\CommonMark\Block\Element\IndentedCode;
+use PHPUnit\Framework\TestCase;
 use League\CommonMark\DocParser;
 use League\CommonMark\Environment;
 use League\CommonMark\HtmlRenderer;
-use PHPUnit\Framework\TestCase;
-use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 use Spatie\Snapshots\MatchesSnapshots;
+use League\CommonMark\Block\Element\IndentedCode;
+use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 
 class IndentedCodeRendererTest extends TestCase
 {
@@ -17,7 +17,7 @@ class IndentedCodeRendererTest extends TestCase
     /** @test */
     public function it_highlights_code_blocks()
     {
-        $markdown = <<<MARKDOWN
+        $markdown = <<<'MARKDOWN'
 Which looks like this in use:
 
     <generic-form

@@ -2,13 +2,13 @@
 
 namespace Spatie\CommonMarkHighlighter\Tests;
 
-use League\CommonMark\Block\Element\FencedCode;
+use PHPUnit\Framework\TestCase;
 use League\CommonMark\DocParser;
 use League\CommonMark\Environment;
 use League\CommonMark\HtmlRenderer;
-use PHPUnit\Framework\TestCase;
-use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use Spatie\Snapshots\MatchesSnapshots;
+use League\CommonMark\Block\Element\FencedCode;
+use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 
 class FencedCodeRendererTest extends TestCase
 {
@@ -17,7 +17,7 @@ class FencedCodeRendererTest extends TestCase
     /** @test */
     public function it_highlights_code_blocks_with_a_specified_language()
     {
-        $markdown = <<<MARKDOWN
+        $markdown = <<<'MARKDOWN'
 Which looks like this in use:
 
 ```html
@@ -46,7 +46,7 @@ MARKDOWN;
     /** @test */
     public function it_highlights_code_blocks_with_an_autodetected_language()
     {
-        $markdown = <<<MARKDOWN
+        $markdown = <<<'MARKDOWN'
 Which looks like this in use:
 
 ```
