@@ -10,7 +10,7 @@ A block renderer for  [league/commonmark](https://github.com/thephpleague/common
 
 > highlight.php is a server side code highlighter written in PHP that currently supports 185 languages. It's a port of highlight.js by Ivan Sagalaev that makes full use of the language and style definitions of the original JavaScript project.
 
-The output html is compatible with highlight.js themes, which you can expore on [highlightjs.org](https://highlightjs.org/static/demo/). 
+The output html is compatible with highlight.js themes, which you can explore on [highlightjs.org](https://highlightjs.org/static/demo/). 
 
 What are the benefits of using this package over highlight.js?
 
