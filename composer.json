@@ -18,7 +18,7 @@
     "require": {
         "php": "^7.1",
         "league/commonmark": "^0.18.0",
-        "scrivo/highlight.php": "v9.12.0.5"
+        "scrivo/highlight.php": "v9.13.1.1"
     },
     "require-dev": {
         "larapack/dd": "^1.0",
