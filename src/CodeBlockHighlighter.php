@@ -27,8 +27,9 @@ class CodeBlockHighlighter
                 ? $this->highlighter->highlight($language, $contents)
                 : $this->highlighter->highlightAuto($contents);
 
-            return vsprintf('<code class="%s hljs %s">%s</code>', [
+            return vsprintf('<code class="%s hljs %s" data-lang="%s">%s</code>', [
                 'language-'.($language ? $language : $result->language),
+                $result->language,
                 $result->language,
                 $result->value,
             ]);
