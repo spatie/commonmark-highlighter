@@ -2,6 +2,10 @@
 
 All notable changes to `commonmark-highlighter` will be documented in this file
 
+## 1.1.0 - 2019-06-14
+
+- add `data-lang` attribute to `<code>` block
+
 ## 1.0.4 - 2019-05-06
 
 - require the latest version of commonmark
