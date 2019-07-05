@@ -2,9 +2,9 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/commonmark-highlighter.svg?style=flat-square)](https://packagist.org/packages/spatie/commonmark-highlighter)
 [![Build Status](https://img.shields.io/travis/spatie/commonmark-highlighter/master.svg?style=flat-square)](https://travis-ci.org/spatie/commonmark-highlighter)
-[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/commonmark-highlighter.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/commonmark-highlighter)
-[![StyleCI](https://github.styleci.io/repos/159513310/shield?branch=master)]
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/commonmark-highlighter.svg?style=flat-square)](https://packagist.org/packages/spatie/commonmark-highlighter)
+[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/commonmark-highlighter.svg?style=flat-square)(https://scrutinizer-ci.com/g/spatie/commonmark-highlighter)
+[![StyleCI](https://github.styleci.io/repos/159513310/shield?branch=master)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/commonmark-highlighter.svg?style=flat-square)(https://packagist.org/packages/spatie/commonmark-highlighter)
 
 A block renderer for  [league/commonmark](https://github.com/thephpleague/commonmark) to highlight code blocks using [scrivo/highlight.php](https://github.com/scrivo/highlight.php).
 
