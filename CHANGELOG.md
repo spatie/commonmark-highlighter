@@ -2,6 +2,10 @@
 
 All notable changes to `commonmark-highlighter` will be documented in this file
 
+## 2.1.0 - 2019-11-21
+
+- Add support for highlighting specific lines
+
 ## 2.0.0 - 2019-07-05
 
 - update to Commonmark v1
