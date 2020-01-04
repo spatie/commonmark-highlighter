@@ -7,8 +7,8 @@ use League\CommonMark\DocParser;
 use League\CommonMark\Environment;
 use League\CommonMark\HtmlRenderer;
 use PHPUnit\Framework\TestCase;
-use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use Spatie\CommonMarkHighlighter\CodeBlockHighlighterExtension;
+use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use Spatie\Snapshots\MatchesSnapshots;
 
 class FencedCodeRendererTest extends TestCase
