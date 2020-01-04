@@ -43,6 +43,9 @@ $environment = Environment::createCommonMarkEnvironment();
 $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer());
 $environment->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer());
 
+// OR add via CommonMark extension
+// $environment->addExtension(new CodeBlockHighlighterExtension());
+
 $commonMarkConverter = new CommonMarkConverter([], $environment);
 
 echo $commonMarkConverter->convertToHtml($markdown);
