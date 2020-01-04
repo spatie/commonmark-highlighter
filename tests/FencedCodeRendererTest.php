@@ -9,6 +9,7 @@ use League\CommonMark\HtmlRenderer;
 use Spatie\Snapshots\MatchesSnapshots;
 use League\CommonMark\Block\Element\FencedCode;
 use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
+use Spatie\CommonMarkHighlighter\CodeBlockHighlighterExtension;
 
 class FencedCodeRendererTest extends TestCase
 {
@@ -30,17 +31,21 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $extensionEnvironment = Environment::createCommonMarkEnvironment();
+        $extensionEnvironment->addExtension(new CodeBlockHighlighterExtension());
+        $inlineEnvironment = Environment::createCommonMarkEnvironment();
+        $inlineEnvironment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
-        $htmlRenderer = new HtmlRenderer($environment);
+        $inlineParser = new DocParser($inlineEnvironment);
+        $inlineHtmlRenderer = new HtmlRenderer($inlineEnvironment);
+        $extensionParser = new DocParser($extensionEnvironment);
+        $extensionHtmlRenderer = new HtmlRenderer($extensionEnvironment);
 
-        $document = $parser->parse($markdown);
+        $inlineHtml = $inlineHtmlRenderer->renderBlock($inlineParser->parse($markdown));
+        $extensionHtml = $extensionHtmlRenderer->renderBlock($extensionParser->parse($markdown));
 
-        $html = $htmlRenderer->renderBlock($document);
-
-        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$inlineHtml.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$extensionHtml.'</div>');
     }
 
     /** @test */
@@ -62,17 +67,21 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $extensionEnvironment = Environment::createCommonMarkEnvironment();
+        $extensionEnvironment->addExtension(new CodeBlockHighlighterExtension());
+        $inlineEnvironment = Environment::createCommonMarkEnvironment();
+        $inlineEnvironment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
-        $htmlRenderer = new HtmlRenderer($environment);
+        $inlineParser = new DocParser($inlineEnvironment);
+        $inlineHtmlRenderer = new HtmlRenderer($inlineEnvironment);
+        $extensionParser = new DocParser($extensionEnvironment);
+        $extensionHtmlRenderer = new HtmlRenderer($extensionEnvironment);
 
-        $document = $parser->parse($markdown);
+        $inlineHtml = $inlineHtmlRenderer->renderBlock($inlineParser->parse($markdown));
+        $extensionHtml = $extensionHtmlRenderer->renderBlock($extensionParser->parse($markdown));
 
-        $html = $htmlRenderer->renderBlock($document);
-
-        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$inlineHtml.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$extensionHtml.'</div>');
     }
 
     /** @test */
@@ -94,17 +103,21 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $extensionEnvironment = Environment::createCommonMarkEnvironment();
+        $extensionEnvironment->addExtension(new CodeBlockHighlighterExtension());
+        $inlineEnvironment = Environment::createCommonMarkEnvironment();
+        $inlineEnvironment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
-        $htmlRenderer = new HtmlRenderer($environment);
+        $inlineParser = new DocParser($inlineEnvironment);
+        $inlineHtmlRenderer = new HtmlRenderer($inlineEnvironment);
+        $extensionParser = new DocParser($extensionEnvironment);
+        $extensionHtmlRenderer = new HtmlRenderer($extensionEnvironment);
 
-        $document = $parser->parse($markdown);
+        $inlineHtml = $inlineHtmlRenderer->renderBlock($inlineParser->parse($markdown));
+        $extensionHtml = $extensionHtmlRenderer->renderBlock($extensionParser->parse($markdown));
 
-        $html = $htmlRenderer->renderBlock($document);
-
-        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$inlineHtml.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$extensionHtml.'</div>');
     }
 
     /** @test */
@@ -126,17 +139,21 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $extensionEnvironment = Environment::createCommonMarkEnvironment();
+        $extensionEnvironment->addExtension(new CodeBlockHighlighterExtension());
+        $inlineEnvironment = Environment::createCommonMarkEnvironment();
+        $inlineEnvironment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
-        $htmlRenderer = new HtmlRenderer($environment);
+        $inlineParser = new DocParser($inlineEnvironment);
+        $inlineHtmlRenderer = new HtmlRenderer($inlineEnvironment);
+        $extensionParser = new DocParser($extensionEnvironment);
+        $extensionHtmlRenderer = new HtmlRenderer($extensionEnvironment);
 
-        $document = $parser->parse($markdown);
+        $inlineHtml = $inlineHtmlRenderer->renderBlock($inlineParser->parse($markdown));
+        $extensionHtml = $extensionHtmlRenderer->renderBlock($extensionParser->parse($markdown));
 
-        $html = $htmlRenderer->renderBlock($document);
-
-        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$inlineHtml.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$extensionHtml.'</div>');
     }
 
     /** @test */
@@ -158,17 +175,21 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $extensionEnvironment = Environment::createCommonMarkEnvironment();
+        $extensionEnvironment->addExtension(new CodeBlockHighlighterExtension());
+        $inlineEnvironment = Environment::createCommonMarkEnvironment();
+        $inlineEnvironment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
-        $htmlRenderer = new HtmlRenderer($environment);
+        $inlineParser = new DocParser($inlineEnvironment);
+        $inlineHtmlRenderer = new HtmlRenderer($inlineEnvironment);
+        $extensionParser = new DocParser($extensionEnvironment);
+        $extensionHtmlRenderer = new HtmlRenderer($extensionEnvironment);
 
-        $document = $parser->parse($markdown);
+        $inlineHtml = $inlineHtmlRenderer->renderBlock($inlineParser->parse($markdown));
+        $extensionHtml = $extensionHtmlRenderer->renderBlock($extensionParser->parse($markdown));
 
-        $html = $htmlRenderer->renderBlock($document);
-
-        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$inlineHtml.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$extensionHtml.'</div>');
     }
 
     /** @test */
@@ -190,17 +211,21 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $extensionEnvironment = Environment::createCommonMarkEnvironment();
+        $extensionEnvironment->addExtension(new CodeBlockHighlighterExtension());
+        $inlineEnvironment = Environment::createCommonMarkEnvironment();
+        $inlineEnvironment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
-        $htmlRenderer = new HtmlRenderer($environment);
+        $inlineParser = new DocParser($inlineEnvironment);
+        $inlineHtmlRenderer = new HtmlRenderer($inlineEnvironment);
+        $extensionParser = new DocParser($extensionEnvironment);
+        $extensionHtmlRenderer = new HtmlRenderer($extensionEnvironment);
 
-        $document = $parser->parse($markdown);
+        $inlineHtml = $inlineHtmlRenderer->renderBlock($inlineParser->parse($markdown));
+        $extensionHtml = $extensionHtmlRenderer->renderBlock($extensionParser->parse($markdown));
 
-        $html = $htmlRenderer->renderBlock($document);
-
-        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$inlineHtml.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$extensionHtml.'</div>');
     }
 
     /** @test */
@@ -222,17 +247,21 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $extensionEnvironment = Environment::createCommonMarkEnvironment();
+        $extensionEnvironment->addExtension(new CodeBlockHighlighterExtension());
+        $inlineEnvironment = Environment::createCommonMarkEnvironment();
+        $inlineEnvironment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
-        $htmlRenderer = new HtmlRenderer($environment);
+        $inlineParser = new DocParser($inlineEnvironment);
+        $inlineHtmlRenderer = new HtmlRenderer($inlineEnvironment);
+        $extensionParser = new DocParser($extensionEnvironment);
+        $extensionHtmlRenderer = new HtmlRenderer($extensionEnvironment);
 
-        $document = $parser->parse($markdown);
+        $inlineHtml = $inlineHtmlRenderer->renderBlock($inlineParser->parse($markdown));
+        $extensionHtml = $extensionHtmlRenderer->renderBlock($extensionParser->parse($markdown));
 
-        $html = $htmlRenderer->renderBlock($document);
-
-        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$inlineHtml.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$extensionHtml.'</div>');
     }
 
     /** @test */
@@ -251,16 +280,20 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $extensionEnvironment = Environment::createCommonMarkEnvironment();
+        $extensionEnvironment->addExtension(new CodeBlockHighlighterExtension());
+        $inlineEnvironment = Environment::createCommonMarkEnvironment();
+        $inlineEnvironment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
-        $htmlRenderer = new HtmlRenderer($environment);
+        $inlineParser = new DocParser($inlineEnvironment);
+        $inlineHtmlRenderer = new HtmlRenderer($inlineEnvironment);
+        $extensionParser = new DocParser($extensionEnvironment);
+        $extensionHtmlRenderer = new HtmlRenderer($extensionEnvironment);
 
-        $document = $parser->parse($markdown);
+        $inlineHtml = $inlineHtmlRenderer->renderBlock($inlineParser->parse($markdown));
+        $extensionHtml = $extensionHtmlRenderer->renderBlock($extensionParser->parse($markdown));
 
-        $html = $htmlRenderer->renderBlock($document);
-
-        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$inlineHtml.'</div>');
+        $this->assertMatchesXmlSnapshot('<div>'.$extensionHtml.'</div>');
     }
 }

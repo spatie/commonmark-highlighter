@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<div>
+  <p>Which looks like this in use:</p>
+  <pre>
+    <code>&lt;generic-form
+    :showBackButton="true"
+    @back="goBack"
+&gt;&lt;/generic-form&gt;
+</code>
+  </pre>
+  <p>Something feels wrong here.</p>
+</div>

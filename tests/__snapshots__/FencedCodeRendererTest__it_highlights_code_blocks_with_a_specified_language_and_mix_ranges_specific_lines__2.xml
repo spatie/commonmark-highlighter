@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<div>
+  <p>Which looks like this in use:</p>
+  <pre>
+    <code class="language-html{1,2-3,5,7}">&lt;generic-form
+    :showBackButton="true"
+    @back="goBack"
+&gt;
+    &lt;input type="text" name="send-to"&gt;
+    &lt;input type="number" name="amount" /&gt;
+&lt;/generic-form&gt;
+</code>
+  </pre>
+  <p>Something feels wrong here.</p>
+</div>
