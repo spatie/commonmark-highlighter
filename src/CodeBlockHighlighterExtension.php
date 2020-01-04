@@ -6,10 +6,8 @@ namespace Spatie\CommonMarkHighlighter;
 
 use League\CommonMark\Block\Element\FencedCode;
 use League\CommonMark\Block\Element\IndentedCode;
-use League\CommonMark\Extension\ExtensionInterface;
-use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use League\CommonMark\ConfigurableEnvironmentInterface;
-use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
+use League\CommonMark\Extension\ExtensionInterface;
 
 class CodeBlockHighlighterExtension implements ExtensionInterface
 {
