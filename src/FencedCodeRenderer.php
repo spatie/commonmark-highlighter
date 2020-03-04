@@ -2,12 +2,12 @@
 
 namespace Spatie\CommonMarkHighlighter;
 
-use League\CommonMark\Util\Xml;
-use League\CommonMark\Block\Element\FencedCode;
-use League\CommonMark\ElementRendererInterface;
 use League\CommonMark\Block\Element\AbstractBlock;
+use League\CommonMark\Block\Element\FencedCode;
 use League\CommonMark\Block\Renderer\BlockRendererInterface;
 use League\CommonMark\Block\Renderer\FencedCodeRenderer as BaseFencedCodeRenderer;
+use League\CommonMark\ElementRendererInterface;
+use League\CommonMark\Util\Xml;
 
 class FencedCodeRenderer implements BlockRendererInterface
 {
