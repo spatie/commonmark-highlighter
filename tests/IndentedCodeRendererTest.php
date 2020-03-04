@@ -2,13 +2,13 @@
 
 namespace Spatie\CommonMarkHighlighter\Tests;
 
-use PHPUnit\Framework\TestCase;
+use League\CommonMark\Block\Element\IndentedCode;
 use League\CommonMark\DocParser;
 use League\CommonMark\Environment;
 use League\CommonMark\HtmlRenderer;
-use Spatie\Snapshots\MatchesSnapshots;
-use League\CommonMark\Block\Element\IndentedCode;
+use PHPUnit\Framework\TestCase;
 use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
+use Spatie\Snapshots\MatchesSnapshots;
 
 class IndentedCodeRendererTest extends TestCase
 {

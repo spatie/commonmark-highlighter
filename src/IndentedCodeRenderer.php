@@ -2,10 +2,10 @@
 
 namespace Spatie\CommonMarkHighlighter;
 
-use League\CommonMark\ElementRendererInterface;
 use League\CommonMark\Block\Element\AbstractBlock;
 use League\CommonMark\Block\Renderer\BlockRendererInterface;
 use League\CommonMark\Block\Renderer\IndentedCodeRenderer as BaseIndentedCodeRenderer;
+use League\CommonMark\ElementRendererInterface;
 
 class IndentedCodeRenderer implements BlockRendererInterface
 {
