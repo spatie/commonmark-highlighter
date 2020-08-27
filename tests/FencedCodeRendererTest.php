@@ -236,6 +236,33 @@ MARKDOWN;
     }
 
     /** @test */
+    public function it_highlights_code_blocks_with_a_specified_language_and_line_range_with_emojis()
+    {
+        $markdown = <<<'MARKDOWN'
+Which looks like this in use:
+
+```php{2}
+// ✅ ...
+$isUserPending = $user->isStatus("pending");
+```
+
+Something feels wrong here.
+MARKDOWN;
+
+        $environment = Environment::createCommonMarkEnvironment();
+        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+
+        $parser = new DocParser($environment);
+        $htmlRenderer = new HtmlRenderer($environment);
+
+        $document = $parser->parse($markdown);
+
+        $html = $htmlRenderer->renderBlock($document);
+
+        $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
+    }
+
+    /** @test */
     public function it_highlights_code_blocks_with_an_autodetected_language()
     {
         $markdown = <<<'MARKDOWN'

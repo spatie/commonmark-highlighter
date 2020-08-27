@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<div>
+  <p>Which looks like this in use:</p>
+  <pre>
+    <code class="language-php hljs php" data-lang="php">
+      <span class="loc">
+        <span class="hljs-comment">// ✅ ...</span>
+      </span>
+      <span class="loc highlighted">$isUserPending = $user-&gt;isStatus(<span class="hljs-string">"pending"</span>);</span>
+      <span class="loc"/>
+    </code>
+  </pre>
+  <p>Something feels wrong here.</p>
+</div>
