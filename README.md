@@ -1,7 +1,7 @@
 # Highlight your markdown code blocks with league/commonmark
 
 [![Latest Version](https://img.shields.io/github/release/spatie/commonmark-highlighter.svg?style=flat-square)](https://github.com/spatie/commonmark-highlighter/releases)
-[![Build Status](https://img.shields.io/travis/spatie/commonmark-highlighter/master.svg?style=flat-square)](https://travis-ci.org/spatie/commonmark-highlighter)
+[![Build Status](https://img.shields.io/github/workflow/status/spatie/commonmark-highlighter/Tests.svg?style=flat-square)](https://github.com/spatie/commonmark-highlighter/actions)
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/commonmark-highlighter.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/commonmark-highlighter)
 [![StyleCI](https://styleci.io/repos/159513310/shield)](https://styleci.io/repos/159513310)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/commonmark-highlighter.svg?style=flat-square)](https://packagist.org/packages/spatie/commonmark-highlighter)
