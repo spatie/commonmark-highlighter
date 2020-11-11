@@ -22,7 +22,7 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
         tools: composer
-        coverage: none
+        coverage: pcov
 
     - name: Setup Problem Matches
       run: |
