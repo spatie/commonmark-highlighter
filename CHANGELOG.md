@@ -1,6 +1,10 @@
-# Changelog
+2# Changelog
 
 All notable changes to `commonmark-highlighter` will be documented in this file
+
+## 2.1.1 - 2020-11-30
+
+- add support for PHP 8
 
 ## 2.1.0 - 2019-11-21
 
