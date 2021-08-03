@@ -5,9 +5,15 @@
     <code class="language-html hljs xml" data-lang="html">
       <span class="loc">
         <span class="hljs-tag">&lt;<span class="hljs-name">generic-form</span></span>
-        <span class="loc highlighted"><span class="hljs-attr">:showBackButton</span>=<span class="hljs-string">"true"</span></span>
-        <span class="loc highlighted">    @<span class="hljs-attr">back</span>=<span class="hljs-string">"goBack"</span></span>
-        <span class="loc">&gt;</span>
+      </span>
+      <span class="loc highlighted">
+        <span class="hljs-tag"><span class="hljs-attr">:showBackButton</span>=<span class="hljs-string">"true"</span></span>
+      </span>
+      <span class="loc highlighted">
+        <span class="hljs-tag">    @<span class="hljs-attr">back</span>=<span class="hljs-string">"goBack"</span></span>
+      </span>
+      <span class="loc">
+        <span class="hljs-tag">&gt;</span>
       </span>
       <span class="loc highlighted">
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"send-to"</span>&gt;</span>

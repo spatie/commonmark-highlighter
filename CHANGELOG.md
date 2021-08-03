@@ -2,6 +2,10 @@
 
 All notable changes to `commonmark-highlighter` will be documented in this file
 
+## 3.0.0 - 2021-08-03
+
+- update to Commonmark v2
+
 ## 2.1.1 - 2020-11-30
 
 - add support for PHP 8
