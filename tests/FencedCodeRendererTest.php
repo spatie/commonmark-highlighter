@@ -2,10 +2,10 @@
 
 namespace Spatie\CommonMarkHighlighter\Tests;
 
-use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
-use League\CommonMark\Parser\MarkdownParser;
 use League\CommonMark\Environment\Environment;
+use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
+use League\CommonMark\Parser\MarkdownParser;
 use League\CommonMark\Renderer\HtmlRenderer;
 use PHPUnit\Framework\TestCase;
 use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
