@@ -1,8 +1,8 @@
-2# Changelog
+# Changelog
 
 All notable changes to `commonmark-highlighter` will be documented in this file
 
-## 3.0.0 - 2021-08-03
+## 3.0.0 - 2021-08-04
 
 - update to Commonmark v2
 
