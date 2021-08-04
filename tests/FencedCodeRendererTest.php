@@ -2,10 +2,11 @@
 
 namespace Spatie\CommonMarkHighlighter\Tests;
 
-use League\CommonMark\Block\Element\FencedCode;
-use League\CommonMark\DocParser;
-use League\CommonMark\Environment;
-use League\CommonMark\HtmlRenderer;
+use League\CommonMark\Environment\Environment;
+use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
+use League\CommonMark\Parser\MarkdownParser;
+use League\CommonMark\Renderer\HtmlRenderer;
 use PHPUnit\Framework\TestCase;
 use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use Spatie\Snapshots\MatchesSnapshots;
@@ -30,15 +31,16 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $environment = new Environment();
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
+        $parser = new MarkdownParser($environment);
         $htmlRenderer = new HtmlRenderer($environment);
 
         $document = $parser->parse($markdown);
 
-        $html = $htmlRenderer->renderBlock($document);
+        $html = $htmlRenderer->renderDocument($document);
 
         $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
@@ -62,15 +64,16 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $environment = new Environment();
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
+        $parser = new MarkdownParser($environment);
         $htmlRenderer = new HtmlRenderer($environment);
 
         $document = $parser->parse($markdown);
 
-        $html = $htmlRenderer->renderBlock($document);
+        $html = $htmlRenderer->renderDocument($document);
 
         $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
@@ -94,15 +97,16 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $environment = new Environment();
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
+        $parser = new MarkdownParser($environment);
         $htmlRenderer = new HtmlRenderer($environment);
 
         $document = $parser->parse($markdown);
 
-        $html = $htmlRenderer->renderBlock($document);
+        $html = $htmlRenderer->renderDocument($document);
 
         $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
@@ -126,15 +130,16 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $environment = new Environment();
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
+        $parser = new MarkdownParser($environment);
         $htmlRenderer = new HtmlRenderer($environment);
 
         $document = $parser->parse($markdown);
 
-        $html = $htmlRenderer->renderBlock($document);
+        $html = $htmlRenderer->renderDocument($document);
 
         $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
@@ -158,15 +163,16 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $environment = new Environment();
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
+        $parser = new MarkdownParser($environment);
         $htmlRenderer = new HtmlRenderer($environment);
 
         $document = $parser->parse($markdown);
 
-        $html = $htmlRenderer->renderBlock($document);
+        $html = $htmlRenderer->renderDocument($document);
 
         $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
@@ -190,15 +196,16 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $environment = new Environment();
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
+        $parser = new MarkdownParser($environment);
         $htmlRenderer = new HtmlRenderer($environment);
 
         $document = $parser->parse($markdown);
 
-        $html = $htmlRenderer->renderBlock($document);
+        $html = $htmlRenderer->renderDocument($document);
 
         $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
@@ -222,15 +229,16 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $environment = new Environment();
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
+        $parser = new MarkdownParser($environment);
         $htmlRenderer = new HtmlRenderer($environment);
 
         $document = $parser->parse($markdown);
 
-        $html = $htmlRenderer->renderBlock($document);
+        $html = $htmlRenderer->renderDocument($document);
 
         $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
@@ -249,15 +257,16 @@ $isUserPending = $user->isStatus("pending");
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $environment = new Environment();
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
+        $parser = new MarkdownParser($environment);
         $htmlRenderer = new HtmlRenderer($environment);
 
         $document = $parser->parse($markdown);
 
-        $html = $htmlRenderer->renderBlock($document);
+        $html = $htmlRenderer->renderDocument($document);
 
         $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
@@ -278,15 +287,16 @@ Which looks like this in use:
 Something feels wrong here.
 MARKDOWN;
 
-        $environment = Environment::createCommonMarkEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
+        $environment = new Environment();
+        $environment->addExtension(new CommonMarkCoreExtension());
+        $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(['html']));
 
-        $parser = new DocParser($environment);
+        $parser = new MarkdownParser($environment);
         $htmlRenderer = new HtmlRenderer($environment);
 
         $document = $parser->parse($markdown);
 
-        $html = $htmlRenderer->renderBlock($document);
+        $html = $htmlRenderer->renderDocument($document);
 
         $this->assertMatchesXmlSnapshot('<div>'.$html.'</div>');
     }
