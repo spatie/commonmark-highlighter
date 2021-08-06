@@ -40,20 +40,22 @@ composer require spatie/commonmark-highlighter
 Create a custom CommonMark environment, and register the `FencedCodeRenderer` and `IndentedCodeRender` as described in the [league/commonmark documentation](https://commonmark.thephpleague.com/customization/block-rendering/).
 
 ```php
-use League\CommonMark\Block\Element\FencedCode;
-use League\CommonMark\Block\Element\IndentedCode;
-use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Environment;
+use League\CommonMark\Environment\Environment;
+use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
+use League\CommonMark\Extension\CommonMark\Node\Block\IndentedCode;
+use League\CommonMark\MarkdownConverter;
 use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 
-$environment = Environment::createCommonMarkEnvironment();
-$environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer());
-$environment->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer());
+$environment = new Environment();
+$environment->addExtension(new CommonMarkCoreExtension());
+$environment->addRenderer(FencedCode::class, new FencedCodeRenderer());
+$environment->addRenderer(IndentedCode::class, new IndentedCodeRenderer());
 
-$commonMarkConverter = new CommonMarkConverter([], $environment);
+$markdownConverter = new MarkdownConverter($environment);
 
-echo $commonMarkConverter->convertToHtml($markdown);
+echo $markdownConverter->convertToHtml($markdown);
 ```
 
 The underlying highlight library recommends specifying a subset of languages for the auto-detection. You can pass an array of languages to any of the renderers.
