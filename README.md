@@ -66,7 +66,7 @@ The underlying highlight library recommends specifying a subset of languages for
 ```php
 new FencedCodeRenderer(['html', 'php', 'js']);
 
-new IndentedCodeCodeRenderer(['html', 'php', 'js']);
+new IndentedCodeRenderer(['html', 'php', 'js']);
 ```
 
 ### Highlighting specific lines
