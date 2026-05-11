@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> For new projects, we recommend using [tempest/highlight](https://github.com/tempestphp/highlight). It is actively maintained, performs well, and ships with its own CommonMark integration. The underlying engine used by this package, [scrivo/highlight.php](https://github.com/scrivo/highlight.php), has not seen updates in a long time, and some of its language grammars (including PHP) are known to be broken.
+
 # Highlight your markdown code blocks with league/commonmark
 
 [![Latest Version](https://img.shields.io/github/release/spatie/commonmark-highlighter.svg?style=flat-square)](https://github.com/spatie/commonmark-highlighter/releases)
